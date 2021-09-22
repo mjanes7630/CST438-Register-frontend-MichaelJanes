@@ -14,6 +14,9 @@ class AddStudent extends Component {
       this.state = {open: false, student: { }};
     };
     
+	
+	
+	
     handleClickOpen = () => {
       this.setState( {open:true} );
     };
