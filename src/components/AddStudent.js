@@ -11,11 +11,8 @@ import TextField from '@material-ui/core/TextField';
 class AddStudent extends Component {
       constructor(props) {
       super(props);
-      this.state = {open: false, student: { }};
+      this.state = {open: false, student_name: "", student_email: ""};
     };
-    
-	
-	
 	
     handleClickOpen = () => {
       this.setState( {open:true} );
@@ -26,27 +23,28 @@ class AddStudent extends Component {
     };
 
 //Changing entire student object, not adding attributes (spread opperater javascript)
-/*    handleNameChange = (event) => {
-      this.setState({student: {student_name: event.target.value}});
+    handleNameChange = (event) => {
+      this.setState({student_name: event.target.value});
     }
 	
 	handleEmailChange = (event) => {
-      this.setState({student: {student_email: event.target.value}});
+      this.setState({student_email: event.target.value});
     }
 	
-	/*handleStatusChange = (event) => {
+/*	handleStatusChange = (event) => {
       this.setState({student:{student_status: event.target.value}});
     }
-*/
+
 
     handleChange = (event) => {
       this.setState({student:{student_name: event.target.value,
 	  student_email: event.target.value}});
     }
-
-  // Save course and close modal form
+*/
+  // Save student and close modal form
     handleAdd = () => {
-       this.props.addStudent(this.state.student);
+	   let student = {student_name: this.state.student_name, student_email: this.state.student_email}
+       this.props.addStudent(student);
        this.handleClose();
     }
 
@@ -59,8 +57,8 @@ class AddStudent extends Component {
             <Dialog open={this.state.open} onClose={this.handleClose}>
                 <DialogTitle>Add Student</DialogTitle>
                 <DialogContent>
-                  <TextField autoFocus fullWidth label="Student Name" name="student_name" onChange={this.handleChange}/> 
-				  <TextField autoFocus fullWidth label="Student Email" name="student_email" onChange={this.handleChange}/>
+                  <TextField autoFocus fullWidth label="Student Name" name="student_name" onChange={this.handleNameChange}/> 
+				  <TextField autoFocus fullWidth label="Student Email" name="student_email" onChange={this.handleEmailChange}/>
                 </DialogContent>
                 <DialogActions>
                   <Button color="secondary" onClick={this.handleClose}>Cancel</Button>
