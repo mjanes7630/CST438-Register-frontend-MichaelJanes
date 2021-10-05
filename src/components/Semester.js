@@ -43,7 +43,6 @@ class Semester extends Component {
           toast.success("Student successfully added", {
               position: toast.POSITION.BOTTOM_LEFT
           });
-          this.fetchCourses();
         } else {
           toast.error("Error when adding", {
               position: toast.POSITION.BOTTOM_LEFT
