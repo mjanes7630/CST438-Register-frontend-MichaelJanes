@@ -43,7 +43,8 @@ class AddStudent extends Component {
 */
   // Save student and close modal form
     handleAdd = () => {
-	   let student = {student_name: this.state.student_name, student_email: this.state.student_email}
+	   let student = {student_name: this.state.student_name, student_email: this.state.student_email};
+	   console.log(student);
        this.props.addStudent(student);
        this.handleClose();
     }
