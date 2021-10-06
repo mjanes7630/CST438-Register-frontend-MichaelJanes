@@ -15,6 +15,7 @@ import Cookies from 'js-cookie';
 import {SERVER_URL} from '../constants.js'
 import Grid from '@material-ui/core/Grid';
 
+
 // user selects from a list of  (year, semester) values
 class Semester extends Component {
     constructor(props) {
@@ -33,6 +34,7 @@ class Semester extends Component {
 
     fetch(`${SERVER_URL}/student/add`,
       {
+		mode: 'no-cors',
         method: 'POST',
         headers: { 'Content-Type': 'application/json',
                    'X-XSRF-TOKEN': token  },
