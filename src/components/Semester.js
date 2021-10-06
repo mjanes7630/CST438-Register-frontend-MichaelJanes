@@ -94,7 +94,7 @@ class Semester extends Component {
                 <DataGrid   rows={SEMESTER_LIST} columns={icolumns} />
               </div>
 			  <Button id='addStudent'>
-				<AddStudentaddStudent={this.addStudent}/>
+				<AddStudent addStudent={this.addStudent}/>
 			  </Button>
               <Button component={Link}
                       to={{pathname:'/schedule' ,
