@@ -34,7 +34,7 @@ class Semester extends Component {
 
     fetch(`${SERVER_URL}/student/add`,
       {
-		mode: 'no-cors',
+		//mode: 'no-cors',
         method: 'POST',
         headers: { 'Content-Type': 'application/json',
                    'X-XSRF-TOKEN': token  },
